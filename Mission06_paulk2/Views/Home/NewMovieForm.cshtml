@@ -3,12 +3,19 @@
 }
 
 @model Mission06_paulk2.Models.ApplicationResponse
-
 @*A form for getting the movies*@
 <div>
     <form method="post">
-        <label asp-for="Category">Category:</label>
-        <input asp-for="Category" />
+        <input asp-for="MovieId" type="hidden" />
+
+        <label asp-for="CategoryId">Category:</label>
+        <select asp-for="CategoryId">
+            <option value="">Select a Category</option>
+            @foreach (Category m in ViewBag.Categories)
+            {
+                <option value="@m.CategoryId">@m.CategoryName</option>
+            }
+        </select>
         <br />
 
         <label asp-for="Title">Title:</label>

@@ -13,9 +13,6 @@ namespace Mission06_paulk2.Models
         public int MovieId { get; set; }
 
         [Required]
-        public string Category { get; set; }
-
-        [Required]
         public string Title { get; set; }
 
         [Required]
@@ -29,5 +26,10 @@ namespace Mission06_paulk2.Models
         public bool Edited { get; set; }
         public string LentTo { get; set; }
         public string Notes { get; set; }
+
+        //Build Foreign Key Relationship
+        [Required]
+        public int CategoryId { get; set; }
+        public Category Category { get; set; }
     }
 }
